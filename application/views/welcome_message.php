@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 	<meta charset="utf-8">
 	<title>Welcome to First problem</title>
-
+	<link rel="stylesheet" type="text/css" href="<?=base_url();?>assets/css/design.css">
 </head>
 <body>
 
