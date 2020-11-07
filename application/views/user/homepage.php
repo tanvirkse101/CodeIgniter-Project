@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Welcome to First problem</title>
-
-</head>
-<body>
-
-<div id="container">
-	<h1>Welcome to First problem!</h1>	
+<br>
+<div class="jumbotron text-center">
+    <h2>Welcome User, You are successfully logged in. </h2>
+    <div class="col-sm-4 text-center float-right">
+        <a class="btn btn-danger" href="<?=base_url().'login/logout';?>">Logout</a>
+    </div>
 </div>
-
-</body>
-</html>
