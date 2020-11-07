@@ -39,10 +39,10 @@
 						<a class="nav-link" href="#">Contact</a>
 					</li>
 					<li>
-						<a href="<?= base_url('users/registration') ?>" class="btn btn-info m-2 my-2 my-sm-0"> Register </a>
+						<a href="<?= base_url('/register') ?>" class="btn btn-info m-2 my-2 my-sm-0"> Register </a>
 					</li>
 					<li>
-						<a href="<?= base_url('users/login') ?>" class="btn btn-success m-2 my-2 my-sm-0"> Login </a>
+						<a href="<?= base_url('/login') ?>" class="btn btn-success m-2 my-2 my-sm-0"> Login </a>
 					</li>
 				</ul>
 			</div>

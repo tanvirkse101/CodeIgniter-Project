@@ -21,7 +21,7 @@ class Login extends CI_Controller {
         }
         //if not load the login page
 		$data['page_title'] = "Login";
-		$this->load->view('_Layout/home/header.php');
+		$this->load->view('_Layout/home/header.php',$data);
 		$this->load->view('user/login');
 		$this->load->view('_Layout/home/footer.php');
     }

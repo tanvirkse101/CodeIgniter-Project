@@ -20,7 +20,7 @@ class Register extends CI_Controller {
         }
         //load the register page views
         $data['page_title'] = "Registration";
-		$this->load->view('_Layout/home/header.php');
+		$this->load->view('_Layout/home/header.php',$data);
 		$this->load->view('user/registration');
 		$this->load->view('_Layout/home/footer.php');
     }
@@ -29,8 +29,10 @@ class Register extends CI_Controller {
         //set the form validation here
         $this->form_validation->set_rules('name', 'Name', 'required|min_length[3]');
         $this->form_validation->set_message('is_unique', 'Email already exists.');
+        $this->form_validation->set_rules('uname', 'UniqueName', 'required|trim|is_unique[users.uname]');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[4]');
+        $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|matches[password]');
         //if the above validation fails, redirect to register page
         //with vaildation_errors();
         if ($this->form_validation->run() == FALSE) {
@@ -40,10 +42,11 @@ class Register extends CI_Controller {
         } else {
             //if not get the input values
             $name = $this->input->post('name');
+            $uname = $this->input->post('uname');
             $email = $this->input->post('email');
             $password = sha1($this->input->post('password'));
             $data = [
-                'name' => $name, 'email' => $email, 'password' => $password, 'date_time' => date('Y-m-d H:i:s')
+                'name' => $name,'uname' => $uname, 'email' => $email, 'password' => $password, 'date_time' => date('Y-m-d H:i:s')
             ];
             //pass the input values to the register model
             $insert_data = $this->register->add_user($data);

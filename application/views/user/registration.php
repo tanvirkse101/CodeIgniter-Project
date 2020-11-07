@@ -62,7 +62,7 @@
 								<label for="pwdcon">Confirm password:</label>
 							</div>
 							<div class="col">
-								<input type="password" class="form-control form-control-sm" id="pwdcon"
+								<input type="password" class="form-control form-control-sm" name="confirm_password" id="pwdcon"
 									placeholder="Retype password">
 							</div>
 							<div class="col-2"></div>
