@@ -20,10 +20,9 @@ class Login extends CI_Controller {
             redirect(base_url().'welcome');
         }
         //if not load the login page
-		$data['page_title'] = "Login";
-		$this->load->view('_Layout/home/header.php',$data);
-		$this->load->view('user/login');
-		$this->load->view('_Layout/home/footer.php');
+        $data['page_title'] = "Login";
+        $data['page'] = "user/login";
+        $this->load->view('_Layout/home/master.php',$data);
     }
     public function doLogin() {
         //get the input fields from login form

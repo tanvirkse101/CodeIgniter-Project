@@ -20,14 +20,15 @@ class Register extends CI_Controller {
         }
         //load the register page views
         $data['page_title'] = "Registration";
-		$this->load->view('_Layout/home/header.php',$data);
-		$this->load->view('user/registration');
-		$this->load->view('_Layout/home/footer.php');
+        $data['page'] = "user/registration";
+        $this->load->view('_Layout/home/master.php',$data);
     }
     //register validation and logic
     public function doRegister() {
         //set the form validation here
         $this->form_validation->set_rules('name', 'Name', 'required|min_length[3]');
+        $this->form_validation->set_rules('bdate', 'Birthday', 'required');
+        $this->form_validation->set_rules('phone', 'Phone', 'required');
         $this->form_validation->set_message('is_unique', 'Email already exists.');
         $this->form_validation->set_rules('uname', 'UniqueName', 'required|trim|is_unique[users.uname]');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
@@ -44,16 +45,33 @@ class Register extends CI_Controller {
             $name = $this->input->post('name');
             $uname = $this->input->post('uname');
             $email = $this->input->post('email');
+            $designation = $this->input->post('designation');
+            $bdate = $this->input->post('bdate');
+            $address = $this->input->post('address');
+            $phone = $this->input->post('phone');
+            $gender = $this->input->post('gender');
+            $utype = $this->input->post('utype');
+            $district = $this->input->post('district');
+            $studentid = $this->input->post('studentid');
             $password = sha1($this->input->post('password'));
-            $data = [
-                'name' => $name,'uname' => $uname, 'email' => $email, 'password' => $password, 'date_time' => date('Y-m-d H:i:s')
+            $data1 = [
+                'name' => $name, 'uname' => $uname, 'email' => $email, 'password' => $password, 'date_time' => date('d-m-Y H:i:s'),
+            ];
+            $data2 = [
+                'name' => $name, 'uname' => $uname,'designation' => $designation, 'bdate' => $bdate, 'address' => $address,
+                'phone' => $phone, 'gender' => $gender,
+                'utype' => $utype, 'district' => $district, 'studentid' => $studentid,
             ];
             //pass the input values to the register model
-            $insert_data = $this->register->add_user($data);
+            $insert_data1 = $this->register->add_user($data1);
+            $insert_data2 = $this->register->add_userinfo($data2);
             //if data inserted then set the success message and redirect to login page
-            if ($insert_data) {
-                $this->session->set_flashdata('msg', 'Successfully Register, Login now!');
-                redirect(base_url() . 'login');
+            if ($insert_data1) {
+                if($insert_data2){
+                    $this->session->set_flashdata('msg', 'Successfully Register, Login now!');
+                    redirect(base_url() . 'login');
+                }
+
             }
         }
     }

@@ -21,8 +21,7 @@ class Welcome extends MY_Controller {
 	public function index()
 	{
 		$data['page_title'] = "HomePage";
-		$this->load->view('_Layout/home/header.php',$data);
-		$this->load->view('welcome_message');
-		$this->load->view('_Layout/home/footer.php');
+        $data['page'] = "welcome_message";
+		$this->load->view('_Layout/home/master.php',$data);
 	}
 }
