@@ -3,12 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Login extends CI_Controller {
     public function __construct() {
         parent::__construct();
-        
-        //load the required libraries and helpers for login
-        $this->load->helper('url');
-        $this->load->library(['form_validation','session']);
-        $this->load->database();
-        
         //load the Login Model
         $this->load->model('LoginModel', 'login');
     }
@@ -34,7 +28,7 @@ class Login extends CI_Controller {
         //if the result is query result is 1 then valid user
         if ($check_login) {
             //if yes then set the session 'loggin_in' as true
-            $this->session->set_userdata('logged_in', true);
+            //$this->session->set_userdata('logged_in', true);
             redirect(base_url().'welcome');
         } else {
             //if no then set the session 'logged_in' as false
@@ -47,7 +41,7 @@ class Login extends CI_Controller {
     }
     public function logout() {
         //unset the logged_in session and redirect to login page
-        $this->session->unset_userdata('logged_in');
+        $this->session->sess_destroy();
         redirect(base_url().'login');
     }
 }

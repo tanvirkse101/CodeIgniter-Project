@@ -32,9 +32,6 @@
 							<input type="password" class="form-control form-control-sm" id="pwd" name="password"
 								placeholder="Password">
 						</div>
-						<div class="col-2">
-							<input type="checkbox" class="align-middle" onclick="viewpassword()"> view
-						</div>
 					</div>
 
 					<hr>
@@ -48,15 +45,3 @@
 	</form>
 </div>
 
-<script>
-
-	function viewpassword() {
-		var x = document.getElementById("pwd");
-		if (x.type === "password") {
-			x.type = "text";
-		} else {
-			x.type = "password";
-		}
-	}
-
-</script>

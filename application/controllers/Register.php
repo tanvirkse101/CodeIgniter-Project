@@ -2,12 +2,6 @@
 class Register extends CI_Controller {
     public function __construct() {
         parent::__construct();
-        
-        //load the required helpers and libraries
-        $this->load->helper('url');
-        $this->load->library(['form_validation', 'session']);
-        $this->load->database();
-        
         //load our Register model here
         $this->load->model('RegisterModel', 'register');
     }
@@ -55,7 +49,7 @@ class Register extends CI_Controller {
             $studentid = $this->input->post('studentid');
             $password = sha1($this->input->post('password'));
             $data1 = [
-                'name' => $name, 'uname' => $uname, 'email' => $email, 'password' => $password, 'date_time' => date('d-m-Y H:i:s'),
+                'name' => $name, 'uname' => $uname, 'email' => $email, 'password' => $password, 'date_time' => date('Y-m-d H:i:s'),
             ];
             $data2 = [
                 'name' => $name, 'uname' => $uname,'designation' => $designation, 'bdate' => $bdate, 'address' => $address,
@@ -66,11 +60,10 @@ class Register extends CI_Controller {
             $insert_data1 = $this->register->add_user($data1);
             $insert_data2 = $this->register->add_userinfo($data2);
             //if data inserted then set the success message and redirect to login page
-            if ($insert_data1) {
-                if($insert_data2){
+            if ($insert_data1 && $insert_data2) {
+
                     $this->session->set_flashdata('msg', 'Successfully Register, Login now!');
-                    redirect(base_url() . 'login');
-                }
+                    redirect(base_url().'login');
 
             }
         }
