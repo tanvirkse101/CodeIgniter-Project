@@ -4,7 +4,7 @@ class Register extends CI_Controller {
         parent::__construct();
         //load our Register model here
         $this->load->model('RegisterModel', 'register');
-    }
+    }   
     //registration form page
     public function index() {
         //check if the user is already logged in 

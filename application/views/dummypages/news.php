@@ -1,5 +1,6 @@
   <!-- Page Content -->
   <div class="container">
+  <h2><?php print_r($this->session->userdata); ?></h2>
 
     <!-- Heading Row -->
     <div class="row align-items-center my-5">

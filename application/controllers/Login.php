@@ -28,7 +28,7 @@ class Login extends CI_Controller {
         //if the result is query result is 1 then valid user
         if ($check_login) {
             //if yes then set the session 'loggin_in' as true
-            //$this->session->set_userdata('logged_in', true);
+            $this->session->set_userdata('logged_in', true);
             redirect(base_url().'welcome');
         } else {
             //if no then set the session 'logged_in' as false

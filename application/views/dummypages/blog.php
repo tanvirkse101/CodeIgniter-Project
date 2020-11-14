@@ -1,5 +1,6 @@
   <!-- Page Content -->
   <div class="container">
+  <h2><?php print_r($this->session->userdata); ?></h2>
 
     <div class="row">
 

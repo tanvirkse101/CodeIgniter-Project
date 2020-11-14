@@ -1,8 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Blog extends CI_Controller {
+class Blog extends MY_Controller {
 	
+	public function __construct() {
+        parent::__construct();
+        //load the Login Model
+        $this->load->model('SessionModel', 'addsession');
+    }
 	public function index()
 	{
 		$data['page_title'] = "Blog";

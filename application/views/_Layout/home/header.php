@@ -12,7 +12,7 @@
 	<title><?= $page_title ?></title>
 </head>
 
-<body>
+<body onload="myFunction()">
 
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
@@ -41,6 +41,9 @@
 					</li>
 					<li>
 						<a href="<?= base_url('/login') ?>" class="btn btn-primary m-2 my-2 my-sm-0"> Login </a>
+					</li>
+					<li>
+						<a class="btn btn-danger m-2 my-2 my-sm-0" href="<?=base_url().'login/logout';?>">Logout</a>
 					</li>
 				</ul>
 			</div>
