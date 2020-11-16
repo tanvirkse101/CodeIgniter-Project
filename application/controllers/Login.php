@@ -11,7 +11,7 @@ class Login extends CI_Controller {
         $logged_in = $this->session->userdata('logged_in');
         if($logged_in){
             //if yes redirect to welcome page
-            redirect(base_url().'welcome');
+            redirect(base_url());
         }
         //if not load the login page
         $data['page_title'] = "Login";

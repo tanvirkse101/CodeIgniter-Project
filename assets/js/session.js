@@ -29,6 +29,22 @@ $(document).ready(function () {
 		});
 	});
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var timer;
 var timerStart;
 var timeSpentOnSite = getTimeSpentOnSite();

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class News extends MY_Controller {
+class News extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
