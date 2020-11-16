@@ -11,7 +11,7 @@ class Shop extends MY_Controller {
 	
 	public function index()
 	{
-		$data['page_title'] = "shop";
+		$data['page_title'] = "Shop";
         $data['page'] = "dummypages/shop";
 		$this->load->view('_Layout/home/master.php',$data);
 	}

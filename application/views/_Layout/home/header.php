@@ -8,11 +8,11 @@
 	<meta name="Description" content="Enter your description here" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<title><?= $page_title ?></title>
 </head>
 
-<body onload="myFunction()">
+<body onload="start_timer()" onbeforeunload="set_active_time()">
 
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
@@ -36,14 +36,26 @@
 					<li class="nav-item">
 						<a class="nav-link" href="<?= base_url('/Shop') ?>">Shop</a>
 					</li>
-					<li>
-						<a href="<?= base_url('/register') ?>" class="btn btn-danger m-2 my-2 my-sm-0"> Register </a>
+					<li class="nav-item">
+						<?php 
+							if($this->session->userdata('logged_in')==FALSE){
+								echo '<a class="nav-link" href="'.base_url('/register').'">Register</a>';
+							}
+						?>
 					</li>
-					<li>
-						<a href="<?= base_url('/login') ?>" class="btn btn-primary m-2 my-2 my-sm-0"> Login </a>
+					<li class="nav-item">
+						<?php 
+							if($this->session->userdata('logged_in')==FALSE){
+								echo '<a class="nav-link" href="'.base_url('/login').'">Login</a>';
+							}
+						?>
 					</li>
-					<li>
-						<a class="btn btn-danger m-2 my-2 my-sm-0" href="<?=base_url().'login/logout';?>">Logout</a>
+					<li class="nav-item">
+						<?php 
+							if($this->session->userdata('logged_in')==TRUE){
+								echo '<a class="nav-link" href="'.base_url('login/logout').'">Logout</a>';
+							}
+						?>
 					</li>
 				</ul>
 			</div>

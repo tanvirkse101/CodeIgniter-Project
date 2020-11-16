@@ -29,7 +29,7 @@ class Login extends CI_Controller {
         if ($check_login) {
             //if yes then set the session 'loggin_in' as true
             $this->session->set_userdata('logged_in', true);
-            redirect(base_url().'welcome');
+            redirect(base_url());
         } else {
             //if no then set the session 'logged_in' as false
             $this->session->set_userdata('logged_in', false);

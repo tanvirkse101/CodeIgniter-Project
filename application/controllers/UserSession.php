@@ -7,26 +7,21 @@ class UserSession extends CI_Controller {
         $this->load->model('SessionModel', 'addsession');
     }
 
-    public function set_user_session(){
-        $session_id = session_id();
-        $user_id = $this->session->userdata('user_id');
-        $ipaddress = $this->session->userdata('ipaddress');
-        $os = $this->session->userdata('os');
-        $browser = $this->session->userdata('browser');
-        $session_data = [
-            'session_id' => $session_id, 'user_id' => $user_id, 'ipaddress' => $ipaddress, 'os' => $os, 'browser' => $browser
-        ];
-            
-        $this->addsession->add_session($session_data);
+    public function set_active_time() {
+
+        $id = $this->input->post('id');
+        $pageurl = $this->input->post('pageurl');
+        $active_time = $this->input->post('timeSpentOnSite');
+
+        $this->db->where('id', $id);
+        $this->db->where('pageurl', $pageurl);
+        $query1 = $this->db->get('user_activity');
+
+   
+            $this->db->set('active_time', "active_time+'$active_time'", FALSE);
+            $this->db->where('id', $id);
+            $this->db->where('pageurl', $pageurl);
+            $this->db->update('user_activity');
     }
 
-    public function set_user_activity(){
-        $page_title = $this->session->userdata('page_title');
-        $page_url = $this->session->userdata('page_url');
-        $activity_data = [
-            'title' => $page_title, 'pageurl' => $page_url
-        ];
-        $this->addsession->add_activity($activity_data);
-
-    }
 }
