@@ -2,10 +2,11 @@
 	<div class="jumbotron bg-primary text-white">
 		<h1 class="text-center">User Activity</h1>
 	</div>
+	<!-- Registered table -->
 	<div class="p-2">
 		<div class="row">
-			<h2 id="registered">Registered User Data:</h2><a class="btn btn-primary" style="margin-left: 55%;" href="#unregistered"
-				role="button">Go to unregistered</a>
+			<h2 id="registered">Registered User Data:</h2><a class="btn btn-primary" style="margin-left: 55%;"
+				href="#unregistered" role="button">Go to unregistered</a>
 			<input class="form-control" id="myInput" type="text" placeholder="Search..">
 			<br>
 			<table class="table table-bordered table-striped">
@@ -50,11 +51,11 @@
 			</table>
 		</div>
 	</div>
-
+	<!-- Unregistered table -->
 	<div class="p-2">
 		<div class="row">
-			<h2 id="unregistered">Unregistered User Data:</h2> <a style="margin-left: 55%;" class="btn btn-primary" href="#registered"
-				role="button">Go to registered</a>
+			<h2 id="unregistered">Unregistered User Data:</h2> <a style="margin-left: 55%;" class="btn btn-primary"
+				href="#registered" role="button">Go to registered</a>
 			<input class="form-control" id="myInput2" type="text" placeholder="Search..">
 			<br>
 			<table class="table table-bordered table-striped">
@@ -97,12 +98,14 @@
 </div>
 <script>
 	$(document).ready(function () {
+		//function for registered table
 		$("#myInput").on("keyup", function () {
 			var value = $(this).val().toLowerCase();
 			$("#myTable tr").filter(function () {
 				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 			});
 		});
+		//function for unregistered table
 		$("#myInput2").on("keyup", function () {
 			var value = $(this).val().toLowerCase();
 			$("#myTable2 tr").filter(function () {

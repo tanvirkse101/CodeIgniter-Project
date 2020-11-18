@@ -51,13 +51,14 @@ class Register extends CI_Controller {
             $data1 = [
                 'name' => $name, 'uname' => $uname, 'email' => $email, 'password' => $password, 'date_time' => date('Y-m-d H:i:s'),
             ];
+            //pass the input values to the register model
+            $insert_data1 = $this->register->add_user($data1);
+            $user_id = $this->db->insert_id();
             $data2 = [
-                'name' => $name, 'uname' => $uname,'designation' => $designation, 'bdate' => $bdate, 'address' => $address,
+                'user_id'=>$user_id,'name' => $name, 'uname' => $uname,'designation' => $designation, 'bdate' => $bdate, 'address' => $address,
                 'phone' => $phone, 'gender' => $gender,
                 'utype' => $utype, 'district' => $district, 'studentid' => $studentid,
             ];
-            //pass the input values to the register model
-            $insert_data1 = $this->register->add_user($data1);
             $insert_data2 = $this->register->add_userinfo($data2);
             //if data inserted then set the success message and redirect to login page
             if ($insert_data1 && $insert_data2) {
