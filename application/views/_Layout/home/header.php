@@ -37,6 +37,9 @@
 						<a class="nav-link" href="<?= base_url('/Shop') ?>">Shop</a>
 					</li>
 					<li class="nav-item">
+						<a class="nav-link" href="<?= base_url('/Activity') ?>">Activity</a>
+					</li>
+					<li class="nav-item">
 						<?php 
 							if($this->session->userdata('logged_in')==FALSE){
 								echo '<a class="nav-link" href="'.base_url('/register').'">Register</a>';

@@ -5,8 +5,6 @@ class Shop extends CI_Controller {
 
 	public function __construct() {
         parent::__construct();
-        //load the Login Model
-        $this->load->model('SessionModel', 'addsession');
 	}
 	
 	public function index()

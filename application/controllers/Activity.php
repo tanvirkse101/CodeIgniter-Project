@@ -1,15 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Blog extends CI_Controller {
+class Activity extends CI_Controller {
 	
 	public function __construct() {
-        parent::__construct();
+		parent::__construct();
     }
+	
 	public function index()
-	{
-		$data['page_title'] = "Blog";
-        $data['page'] = "dummypages/blog";
+	{	
+		//send data and call master view
+		
+		$data['page_title'] = "Activity";
+        $data['page'] = "user/activity";
 		$this->load->view('_Layout/home/master.php',$data);
+		
 	}
 }

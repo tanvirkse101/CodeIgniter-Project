@@ -10,6 +10,8 @@
   );
   $this->session->set_userdata($user);
 
+  //setup user session
+  
   $session_id = session_id();
   $user_id = $this->session->userdata('user_id');
   $page_title = $this->session->userdata('page_title');
@@ -18,20 +20,20 @@
   $browser = $this->session->userdata('browser');
   $page_url = $this->session->userdata('page_url');
   
-  //user_session
+  //user_session for passing to DB
   
   $session_data = [
       'session_id' => $session_id, 'user_id' => $user_id, 'ipaddress' => $ipaddress, 'os' => $os, 'browser' => $browser
   ];        
   $this->db->where('session_id', $session_id);
   $query = $this->db->get('user_session');
-  if(!$query->num_rows()){
+  if($query->num_rows()==0){
       $this->db->insert('user_session', $session_data);
       $id = $this->db->insert_id();
       $this->session->set_userdata('id',$id);
   }
   
-  //user_activity
+  //user_activity for passing to DB
   
   $id = $this->session->userdata('id');
   $activity_data = [
@@ -49,6 +51,8 @@
       $this->db->where('pageurl', $page_url);
       $this->db->update('user_activity');
   }
+  
+  //Load Master view
   
   $this->load->view("_Layout/home/header.php");
   $this->load->view($page);

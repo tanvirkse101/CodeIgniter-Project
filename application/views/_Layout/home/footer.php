@@ -20,7 +20,6 @@
 	}
 
 	function set_active_time() {
-
 		$.ajax({
 			type: "POST",
 			url: "<?php echo base_url('UserSession/set_active_time') ?>",
@@ -34,13 +33,11 @@
 				alert("I got a view");
 			}
 		});
-
-
 	}
 
-</script>    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    </body>
+</script>
 
-    </html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+</body>
+
+</html>

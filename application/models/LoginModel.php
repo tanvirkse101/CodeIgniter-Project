@@ -11,13 +11,14 @@ class LoginModel extends CI_Model {
         // Let's check if there are any results
         if (count($result) == 1) {
             // If there is a user, then create session data
+            $this->session->sess_regenerate();
             $user = array(
                 'user_id' => $result[0]['user_id'],
                 'email' => $result[0]['email'],
                 'uname' => $result[0]['uname'],
 				'name' => $result[0]['name'],
-                'logged_in' => true
             );
+            $this->session->sess_regenerate();
             $this->session->set_userdata($user);
             return count($result);
         }

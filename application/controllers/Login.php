@@ -33,7 +33,6 @@ class Login extends CI_Controller {
         } else {
             //if no then set the session 'logged_in' as false
             $this->session->set_userdata('logged_in', false);
-            
             //and redirect to login page with flashdata invalid msg
             $this->session->set_flashdata('msg', 'Username / Password Invalid');
             redirect(base_url().'login');            
@@ -42,6 +41,7 @@ class Login extends CI_Controller {
     public function logout() {
         //unset the logged_in session and redirect to login page
         $this->session->sess_destroy();
+        //$this->session->unset_userdata('logged_in');
         redirect(base_url().'login');
     }
 }
