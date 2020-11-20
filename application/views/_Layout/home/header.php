@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="Description" content="Enter your description here" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -37,7 +38,10 @@
 						<a class="nav-link" href="<?= base_url('/Shop') ?>">Shop</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<?= base_url('/Activity') ?>">Activity</a>
+						<a class="nav-link" href="<?= base_url('/UserActivity') ?>">User Activity</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="<?= base_url('/Activity') ?>">Activity Database</a>
 					</li>
 					<li class="nav-item">
 						<?php 

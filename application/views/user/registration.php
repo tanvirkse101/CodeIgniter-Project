@@ -1,5 +1,5 @@
 	<!-- Page Content -->
-	<div class="container">
+	<div class="container border" style="height: 100vh;">
 
 		<form action="<?= base_url(); ?>register/doRegister" method="post">
 			<div class="row">

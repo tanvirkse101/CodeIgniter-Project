@@ -1,4 +1,4 @@
-<div class="container border">
+<div class="container border" style="height: 100vh;">
 	<div class="jumbotron text-center bg-primary text-white border border-white rounded">
 		<h1>
 			<?php 

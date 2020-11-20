@@ -1,4 +1,4 @@
-<div class="container border p-2 h-100">
+<div class="container border p-2">
 	<div class="jumbotron bg-primary text-white">
 		<h1 class="text-center">User Activity</h1>
 	</div>
@@ -30,7 +30,7 @@
 					$this->db->from('users');
 					$this->db->join('user_session', 'users.user_id = user_session.user_id');
 					$this->db->join('user_activity', 'user_session.id = user_activity.id');
-					$this->db->order_by('user_activity.request_datetime', 'ASC');
+					$this->db->order_by('user_activity.request_datetime', 'DESC');
 					$join_query = $this->db->get()->result_array();
 					foreach ($join_query as $d){
 						echo'<tr>';
@@ -76,7 +76,7 @@
 					$this->db->select('user_session.id,user_session.ipaddress,user_session.os,user_session.browser,user_activity.request_datetime,user_activity.title,user_activity.number_times,user_activity.active_time');
 					$this->db->from('user_session');
 					$this->db->join('user_activity', 'user_session.id = user_activity.id');
-					$this->db->order_by('user_activity.request_datetime', 'ASC');
+					$this->db->order_by('user_activity.request_datetime', 'DESC');
 					$join_query2 = $this->db->get()->result_array();
 					foreach ($join_query2 as $d2){
 						echo'<tr>';

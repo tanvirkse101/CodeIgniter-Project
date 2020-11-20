@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container border" style="height: 100vh;">
 
 	<form action="<?= base_url(); ?>login/doLogin" method="post">
 		<div class="row">

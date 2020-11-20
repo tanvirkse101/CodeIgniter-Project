@@ -1,5 +1,5 @@
   <!-- Page Content -->
-  <div class="container">
+  <div class="container border">
 
   	<div class="row">
 
