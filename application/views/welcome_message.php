@@ -1,5 +1,5 @@
 <div class="container border" style="height: 100vh;">
-	<div class="jumbotron text-center bg-primary text-white border border-white rounded">
+	<div class="jumbotron text-center bg-dark text-white border border-white rounded">
 		<h1>
 			<?php 
             if($this->session->userdata('logged_in')){

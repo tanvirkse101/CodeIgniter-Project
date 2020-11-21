@@ -1,5 +1,5 @@
 <div class="container border p-2">
-	<div class="jumbotron bg-primary text-white">
+	<div class="jumbotron bg-dark text-white">
 		<h1 class="text-center">User Activity</h1>
 	</div>
 	<!-- Registered table -->
@@ -43,7 +43,7 @@
 						echo '<td>' . $d['request_datetime'] . '</td>';
 						echo '<td>' . $d['title'] . '</td>';
 						echo '<td>' . $d['number_times'] . '</td>';
-						echo '<td>' . ($d['active_time'])/1000 . 's</td>';
+						echo '<td>' . round(($d['active_time'])/1000) . 's</td>';
 						echo'</tr>';
 					} 
 				 	?>
@@ -87,7 +87,7 @@
 						echo '<td>' . $d2['request_datetime'] . '</td>';
 						echo '<td>' . $d2['title'] . '</td>';
 						echo '<td>' . $d2['number_times'] . '</td>';
-						echo '<td>' . ($d2['active_time'])/1000 . 's</td>';
+						echo '<td>' . round(($d2['active_time'])/1000) . 's</td>';
 						echo'</tr>';
 					} 
 				 	?>

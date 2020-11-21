@@ -3,24 +3,27 @@
 		<div class="row jumbotron bg-dark text-white justify-content-center">
 			<h1 class="display-4">Registered Users List</h1>
 		</div>
-		<ul class="card-group list-unstyled mt-4">
+		<div class="card-columns mt-4" style="column-count:4">
 			<?php 
                 $query = $this->db->get('users')->result_array();
                 foreach ($query as $d){
-                    echo'<li class="card bg-primary text-white border shadow m-1">';
-                    echo'<img class="ml-3 mt-3 rounded-circle" style="width: 100px;"
-					src="'.base_url('assets/avatars_img/male.png').'" alt="Generic placeholder image">
-                    <div class="media-body ml-3 mt-3">';
-                    echo'<div class="media-body mr-2 ml-2 mt-2">';
+                    echo'<div class="card bg-primary text-white border-dark shadow">';
+                    echo'<img class="card-img-top ml-3 mt-3 mx-auto d-block rounded-circle" style="width: 100px;"
+					src="'.base_url('assets/avatars_img/male.png').'" alt="Generic placeholder image">';
+                    echo'<div class="card-body text-center ml-3 mt-3">';
                     echo'<h5>'.$d['name'].'</h5>';
 					echo'<h6>Email:</h6>';
 					echo '<h6>'.$d['email'].'</h6>';
-                    echo'<button onclick="SetUser('.$d['user_id'].')" class="btn btn-dark mb-4" type="button">View details</button>';
+					echo '<div class="card-footer">';
+					echo'<button onclick="SetUser('.$d['user_id'].')" class="btn btn-dark" type="button">
+					<a class="text-white" href="#'.$d['user_id'].'">Get Details</a></button>';
+					echo'</div>';
                     echo'</div>';
-                    echo'</li>';
+                    echo'</div>';
                 } 
             ?>
-		</ul>
+		</div>
+
 		<div>
 			<div class="row justify-content-center ">
 				<div class="col m-1 bg-dark text-white" style="width: 50%;">
@@ -109,7 +112,7 @@
 						echo '<h5>Page: '.$unique_titles[$x]['title'].'</h5>';
 						//echo '<h5>'.print_r($visit_time).'</h5>';
 						echo '<h5>Visits: '.$visit_time[0]['total_visits'].' Times</h5>';
-						echo '<h5>Time spent: '.($visit_time[0]['total_time']/1000).' Seconds</h5>';
+						echo '<h5>Time spent: '.round($visit_time[0]['total_time']/1000).' Seconds</h5>';
 						echo '<hr class="bg-white">';
 					}
 
