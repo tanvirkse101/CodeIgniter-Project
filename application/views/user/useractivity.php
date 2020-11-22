@@ -88,8 +88,8 @@
 					$this->db->limit('1');
 					$browser=$this->db->get()->result_array();
 					echo '<h5><u>Preferred Browser:</u> </h5>';
-					if(isset($browser[0]['ipaddress'])) { 
-						echo '<h5>'.strval($browser[0]['ipaddress']).'</h5>';
+					if(isset($browser[0]['browser'])) { 
+						echo '<h5>'.strval($browser[0]['browser']).'</h5>';
 					} 
 					else { 
 						echo '<h5>No data found!!</h5>'; 
