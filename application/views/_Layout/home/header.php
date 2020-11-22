@@ -16,9 +16,9 @@
 <body onload="start_timer()" onbeforeunload="set_active_time()">
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" style="height: 80px;">
 		<div class="container">
-			<a class="navbar-brand float-left" href="#">e-Learning Research Lab [Intern Problems]</a>
+			<a class="navbar-brand float-left" href="#"><h4>e-Learning Research Lab [Intern Problems]</h4></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>

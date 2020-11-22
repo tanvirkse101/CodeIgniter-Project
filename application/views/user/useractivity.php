@@ -3,7 +3,7 @@
 		<div class="row jumbotron bg-dark text-white justify-content-center">
 			<h1 class="display-4">Registered Users List</h1>
 		</div>
-		<div class="card-columns mt-4" style="column-count:4">
+		<div class="card-columns mt-4" style="column-count: 4">
 			<?php 
                 $query = $this->db->get('users')->result_array();
                 foreach ($query as $d){
@@ -55,7 +55,12 @@
 					$this->db->limit('1');
 					$os=$this->db->get()->result_array();
 					echo '<h5><u>Common OS:</u> </h5>';
-					echo '<h5>'.strval($os[0]['os']).'</h5>';
+					if(isset($os[0]['os'])) { 
+						echo '<h5>'.strval($os[0]['os']).'</h5>';
+					} 
+					else { 
+						echo '<h5>No data found!!</h5>'; 
+					}
 
 					//for ip
 					$this->db->select('ipaddress');
@@ -66,7 +71,13 @@
 					$this->db->limit('1');
 					$ip=$this->db->get()->result_array();
 					echo '<h5><u>Common IP:</u> </h6>';
-					echo '<h5>'.strval($ip[0]['ipaddress']).'</h5>';
+					if(isset($ip[0]['ipaddress'])) { 
+						echo '<h5>'.strval($ip[0]['ipaddress']).'</h5>';
+					} 
+					else { 
+						echo '<h5>No data found!!</h5>'; 
+					}
+					
 
 					//for browser
 					$this->db->select('browser');
@@ -77,7 +88,13 @@
 					$this->db->limit('1');
 					$browser=$this->db->get()->result_array();
 					echo '<h5><u>Preferred Browser:</u> </h5>';
-					echo '<h5>'.strval($browser[0]['browser']).'</h5>';
+					if(isset($browser[0]['ipaddress'])) { 
+						echo '<h5>'.strval($browser[0]['ipaddress']).'</h5>';
+					} 
+					else { 
+						echo '<h5>No data found!!</h5>'; 
+					}
+					
 					echo '</div>';
 					
 					echo'<div class="col m-1 bg-dark text-white justify-content-center">';

@@ -6,7 +6,7 @@ class UserSession extends CI_Controller {
         //load the Login Model
         $this->load->model('SessionModel', 'addsession');
     }
-
+    //get data via ajax and update database
     public function set_active_time() {
         //getdatafromajaxcall
         $id = $this->input->post('id');
