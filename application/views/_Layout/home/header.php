@@ -18,9 +18,10 @@
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" style="height: 80px;">
 		<div class="container">
-			<a class="navbar-brand float-left" href="#"><h4>e-Learning Research Lab [Intern Problems]</h4></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<a class="navbar-brand float-left" href="#">
+				<h4>e-Learning Research Lab [Intern Problems]</h4>
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse float-right" id="navbarResponsive">
@@ -44,24 +45,24 @@
 						<a class="nav-link" href="<?= base_url('/Activity') ?>">Activity Database</a>
 					</li>
 					<li class="nav-item">
-						<?php 
-							if($this->session->userdata('logged_in')==FALSE){
-								echo '<a class="nav-link" href="'.base_url('/register').'">Register</a>';
-							}
+						<?php
+						if ($this->session->userdata('logged_in') == FALSE) {
+							echo '<a class="nav-link" href="' . base_url('/register') . '">Register</a>';
+						}
 						?>
 					</li>
 					<li class="nav-item">
-						<?php 
-							if($this->session->userdata('logged_in')==FALSE){
-								echo '<a class="nav-link" href="'.base_url('/login').'">Login</a>';
-							}
+						<?php
+						if ($this->session->userdata('logged_in') == FALSE) {
+							echo '<a class="nav-link" href="' . base_url('/login') . '">Login</a>';
+						}
 						?>
 					</li>
 					<li class="nav-item">
-						<?php 
-							if($this->session->userdata('logged_in')==TRUE){
-								echo '<a class="nav-link" href="'.base_url('login/logout').'">Logout</a>';
-							}
+						<?php
+						if ($this->session->userdata('logged_in') == TRUE) {
+							echo '<a class="nav-link" href="' . base_url('login/logout') . '">Logout</a>';
+						}
 						?>
 					</li>
 				</ul>

@@ -1,12 +1,15 @@
 <?php
-class Register extends CI_Controller {
-    public function __construct() {
+class Register extends CI_Controller
+{
+    public function __construct()
+    {
         parent::__construct();
         //load our Register model here
         $this->load->model('RegisterModel', 'register');
-    }   
+    }
     //registration form page
-    public function index() {
+    public function index()
+    {
         //check if the user is already logged in 
         //if yes redirect to the welcome page
         if ($this->session->userdata('logged_in')) {
@@ -15,10 +18,11 @@ class Register extends CI_Controller {
         //load the register page views
         $data['page_title'] = "Registration";
         $data['page'] = "user/registration";
-        $this->load->view('_Layout/home/master.php',$data);
+        $this->load->view('_Layout/home/master.php', $data);
     }
     //register validation and logic
-    public function doRegister() {
+    public function doRegister()
+    {
         //set the form validation here
         $this->form_validation->set_rules('name', 'Name', 'required|min_length[3]');
         $this->form_validation->set_rules('bdate', 'Birthday', 'required');
@@ -55,7 +59,7 @@ class Register extends CI_Controller {
             $insert_data1 = $this->register->add_user($data1);
             $user_id = $this->db->insert_id();
             $data2 = [
-                'user_id'=>$user_id,'name' => $name, 'uname' => $uname,'designation' => $designation, 'bdate' => $bdate, 'address' => $address,
+                'user_id' => $user_id, 'name' => $name, 'uname' => $uname, 'designation' => $designation, 'bdate' => $bdate, 'address' => $address,
                 'phone' => $phone, 'gender' => $gender,
                 'utype' => $utype, 'district' => $district, 'studentid' => $studentid,
             ];
@@ -63,9 +67,8 @@ class Register extends CI_Controller {
             //if data inserted then set the success message and redirect to login page
             if ($insert_data1 && $insert_data2) {
 
-                    $this->session->set_flashdata('msg', 'Successfully Register, Login now!');
-                    redirect(base_url().'login');
-
+                $this->session->set_flashdata('msg', 'Successfully Register, Login now!');
+                redirect(base_url() . 'login');
             }
         }
     }

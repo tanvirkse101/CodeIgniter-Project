@@ -10,9 +10,9 @@
 						<h2 class="text-center"><i class="fas fa-user"></i> User </h2>
 						<!-- show error messages if the form validation fails -->
 						<?php if ($this->session->flashdata()) { ?>
-						<div class="alert alert-danger">
-							<?=$this->session->flashdata('errors'); ?>
-						</div>
+							<div class="alert alert-danger">
+								<?= $this->session->flashdata('errors'); ?>
+							</div>
 						<?php } ?>
 
 						<hr>
@@ -34,8 +34,7 @@
 								<label for="email">Email address:</label>
 							</div>
 							<div class="col">
-								<input name="email" type="email" class="form-control form-control-sm"
-									placeholder="Enter email" id="email ">
+								<input name="email" type="email" class="form-control form-control-sm" placeholder="Enter email" id="email ">
 							</div>
 						</div>
 
@@ -44,8 +43,7 @@
 								<label for="uname">Usernamer:</label>
 							</div>
 							<div class="col">
-								<input type="text" name="uname" class="form-control form-control-sm"
-									placeholder="Unique user name">
+								<input type="text" name="uname" class="form-control form-control-sm" placeholder="Unique user name">
 							</div>
 						</div>
 
@@ -54,8 +52,7 @@
 								<label for="pwd">Password:</label>
 							</div>
 							<div class="col">
-								<input type="password" class="form-control form-control-sm" id="pwd" name="password"
-									placeholder="Password">
+								<input type="password" class="form-control form-control-sm" id="pwd" name="password" placeholder="Password">
 							</div>
 							<div class="col-2">
 								<input type="checkbox" class="align-middle" onclick="viewpassword()"> view
@@ -67,8 +64,7 @@
 								<label for="pwdcon">Confirm password:</label>
 							</div>
 							<div class="col">
-								<input type="password" class="form-control form-control-sm" name="confirm_password"
-									id="pwdcon" placeholder="Retype password">
+								<input type="password" class="form-control form-control-sm" name="confirm_password" id="pwdcon" placeholder="Retype password">
 							</div>
 							<div class="col-2"></div>
 						</div>
@@ -81,8 +77,7 @@
 								<label for="name">Full name:</label>
 							</div>
 							<div class="col">
-								<input type="text" name="name" class="form-control form-control-sm" placeholder="Full name"
-									id="name">
+								<input type="text" name="name" class="form-control form-control-sm" placeholder="Full name" id="name">
 							</div>
 						</div>
 
@@ -91,8 +86,7 @@
 								<label for="dateofbirth">Date of birth:</label>
 							</div>
 							<div class="col">
-								<input type="date" name="bdate" class="form-control form-control-sm"
-									id="dateofbirth">
+								<input type="date" name="bdate" class="form-control form-control-sm" id="dateofbirth">
 							</div>
 						</div>
 
@@ -113,8 +107,7 @@
 								<label for="studentid">Student ID:</label>
 							</div>
 							<div class="col">
-								<input type="number" class="form-control form-control-sm" placeholder="12345678"
-									name="studentid" id="studentid">
+								<input type="number" class="form-control form-control-sm" placeholder="12345678" name="studentid" id="studentid">
 							</div>
 						</div>
 
@@ -123,8 +116,7 @@
 								<label for="studentid">Phone:</label>
 							</div>
 							<div class="col">
-								<input type="number" name="phone" class="form-control form-control-sm"
-									placeholder="01712345678" id="phone">
+								<input type="number" name="phone" class="form-control form-control-sm" placeholder="01712345678" id="phone">
 							</div>
 						</div>
 
@@ -133,8 +125,7 @@
 								<label for="designation">Designation:</label>
 							</div>
 							<div class="col">
-								<input type="text" name="designation" class="form-control form-control-sm" id="desg"
-									placeholder="Professor">
+								<input type="text" name="designation" class="form-control form-control-sm" id="desg" placeholder="Professor">
 							</div>
 						</div>
 
@@ -185,7 +176,7 @@
 		}
 
 		//Change Input fields for usertype
-		$('#usertype').on('change', function () {
+		$('#usertype').on('change', function() {
 
 			if (this.value == "Student") {
 				$('#designation').hide();
@@ -200,5 +191,4 @@
 			}
 
 		});
-
 	</script>

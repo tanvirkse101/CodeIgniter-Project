@@ -10,9 +10,9 @@
 					<hr>
 
 					<?php if ($this->session->flashdata()) { ?>
-					<div class="alert alert-warning">
-						<?= $this->session->flashdata('msg'); ?>
-					</div>
+						<div class="alert alert-warning">
+							<?= $this->session->flashdata('msg'); ?>
+						</div>
 					<?php } ?>
 
 					<div class="row mt-2">
@@ -20,8 +20,7 @@
 							<label for="email">Email address:</label>
 						</div>
 						<div class="col">
-							<input name="email" type="email" class="form-control form-control-sm"
-								placeholder="Enter email" id="email ">
+							<input name="email" type="email" class="form-control form-control-sm" placeholder="Enter email" id="email ">
 						</div>
 					</div>
 					<div class="row mt-2">
@@ -29,8 +28,7 @@
 							<label for="pwd">Password:</label>
 						</div>
 						<div class="col">
-							<input type="password" class="form-control form-control-sm" id="pwd" name="password"
-								placeholder="Password">
+							<input type="password" class="form-control form-control-sm" id="pwd" name="password" placeholder="Password">
 						</div>
 					</div>
 
@@ -44,4 +42,3 @@
 		</div>
 	</form>
 </div>
-

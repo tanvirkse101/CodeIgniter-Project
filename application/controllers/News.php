@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class News extends CI_Controller {
+class News extends CI_Controller
+{
 
 	/**
 	 * Index Page for this controller.
@@ -18,13 +19,14 @@ class News extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function __construct() {
-        parent::__construct();
-    }
+	public function __construct()
+	{
+		parent::__construct();
+	}
 	public function index()
 	{
 		$data['page_title'] = "News";
-        $data['page'] = "dummypages/news";
-		$this->load->view('_Layout/home/master.php',$data);
+		$data['page'] = "dummypages/news";
+		$this->load->view('_Layout/home/master.php', $data);
 	}
 }
