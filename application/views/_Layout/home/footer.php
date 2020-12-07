@@ -12,14 +12,16 @@
 		timeSpentOnSite = isNaN(timeSpentOnSite) ? 0 : timeSpentOnSite;
 		return timeSpentOnSite;
 	}
+
 	//start the timer when the body tag loads
 	function start_timer() {
 		timerStart = Date.now();
-		timer = setInterval(function() {
+		timer = setInterval(function () {
 			timeSpentOnSite = getTimeSpentOnSite() + (Date.now() - timerStart);
 			timerStart = parseInt(Date.now());
 		}, 1000);
 	}
+
 	//update to database when the body unloads
 	function set_active_time() {
 		$.ajax({
@@ -31,7 +33,7 @@
 				pageurl: pageurl,
 				timeSpentOnSite: timeSpentOnSite,
 			},
-			success: function(data) {
+			success: function (data) {
 				alert("I got a view");
 			}
 		});
